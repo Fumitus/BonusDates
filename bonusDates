@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        bonusDates("20100102", "20151102");
+    }
+
+    public static void bonusDates(String start, String end) {
+        List<Integer> result = new ArrayList<>();
+        int endInt = Integer.parseInt(end);
+        int startInt = Integer.parseInt(start);
+        while (endInt - startInt > 0) {
+            endInt--;
+            if (String.valueOf(endInt).equals(new StringBuilder(String.valueOf(endInt)).reverse().toString())) {
+                System.out.println(endInt);
+                result.add(endInt);
+            }
+        }
+        System.out.println(result);
+    }
+}
